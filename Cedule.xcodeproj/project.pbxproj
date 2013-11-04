@@ -1,0 +1,476 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A18545CE1828626E00515162 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A18545CD1828626E00515162 /* Foundation.framework */; };
+		A18545F81828633D00515162 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A18545DB1828626E00515162 /* XCTest.framework */; };
+		A18545F91828633D00515162 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A18545CD1828626E00515162 /* Foundation.framework */; };
+		A18545FA1828633D00515162 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A18545DE1828626E00515162 /* UIKit.framework */; };
+		A18546001828633D00515162 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A18545FE1828633D00515162 /* InfoPlist.strings */; };
+		A185460C1828637E00515162 /* CEDScheduler.m in Sources */ = {isa = PBXBuildFile; fileRef = A185460B1828637E00515162 /* CEDScheduler.m */; };
+		A185460E1828638C00515162 /* CEDSchedulerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = A185460D1828638C00515162 /* CEDSchedulerSpec.m */; };
+		A185460F182863F400515162 /* CEDScheduler.m in Sources */ = {isa = PBXBuildFile; fileRef = A185460B1828637E00515162 /* CEDScheduler.m */; };
+		F30F20B424CC4971B697FD45 /* libPods-Specs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5493438F151D4DA18577ABC7 /* libPods-Specs.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A18546041828633D00515162 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A18545C21828626E00515162 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A18545C91828626E00515162;
+			remoteInfo = Cedule;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A18545C81828626E00515162 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		5493438F151D4DA18577ABC7 /* libPods-Specs.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Specs.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AD6992A18B84B0BB68BA957 /* Pods-Specs.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Specs.xcconfig"; path = "Pods/Pods-Specs.xcconfig"; sourceTree = "<group>"; };
+		A18545CA1828626E00515162 /* libCedule.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCedule.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A18545CD1828626E00515162 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		A18545D11828626E00515162 /* Cedule-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Cedule-Prefix.pch"; sourceTree = "<group>"; };
+		A18545DB1828626E00515162 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		A18545DE1828626E00515162 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		A18545F71828633D00515162 /* Specs.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Specs.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A18545FD1828633D00515162 /* Specs-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Specs-Info.plist"; sourceTree = "<group>"; };
+		A18545FF1828633D00515162 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A18546031828633D00515162 /* Specs-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Specs-Prefix.pch"; sourceTree = "<group>"; };
+		A18546091828635400515162 /* SpecHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpecHelper.h; sourceTree = "<group>"; };
+		A185460A1828637E00515162 /* CEDScheduler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CEDScheduler.h; sourceTree = "<group>"; };
+		A185460B1828637E00515162 /* CEDScheduler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CEDScheduler.m; sourceTree = "<group>"; };
+		A185460D1828638C00515162 /* CEDSchedulerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CEDSchedulerSpec.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A18545C71828626E00515162 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A18545CE1828626E00515162 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A18545F41828633D00515162 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A18545F81828633D00515162 /* XCTest.framework in Frameworks */,
+				A18545FA1828633D00515162 /* UIKit.framework in Frameworks */,
+				A18545F91828633D00515162 /* Foundation.framework in Frameworks */,
+				F30F20B424CC4971B697FD45 /* libPods-Specs.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A18545C11828626E00515162 = {
+			isa = PBXGroup;
+			children = (
+				A18545CF1828626E00515162 /* Cedule */,
+				A18545FB1828633D00515162 /* Specs */,
+				A18545CC1828626E00515162 /* Frameworks */,
+				A18545CB1828626E00515162 /* Products */,
+				6AD6992A18B84B0BB68BA957 /* Pods-Specs.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		A18545CB1828626E00515162 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A18545CA1828626E00515162 /* libCedule.a */,
+				A18545F71828633D00515162 /* Specs.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A18545CC1828626E00515162 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A18545CD1828626E00515162 /* Foundation.framework */,
+				A18545DB1828626E00515162 /* XCTest.framework */,
+				A18545DE1828626E00515162 /* UIKit.framework */,
+				5493438F151D4DA18577ABC7 /* libPods-Specs.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A18545CF1828626E00515162 /* Cedule */ = {
+			isa = PBXGroup;
+			children = (
+				A18545D01828626E00515162 /* Supporting Files */,
+				A185460A1828637E00515162 /* CEDScheduler.h */,
+				A185460B1828637E00515162 /* CEDScheduler.m */,
+			);
+			path = Cedule;
+			sourceTree = "<group>";
+		};
+		A18545D01828626E00515162 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A18545D11828626E00515162 /* Cedule-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A18545FB1828633D00515162 /* Specs */ = {
+			isa = PBXGroup;
+			children = (
+				A18545FC1828633D00515162 /* Supporting Files */,
+				A185460D1828638C00515162 /* CEDSchedulerSpec.m */,
+			);
+			path = Specs;
+			sourceTree = "<group>";
+		};
+		A18545FC1828633D00515162 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A18545FD1828633D00515162 /* Specs-Info.plist */,
+				A18545FE1828633D00515162 /* InfoPlist.strings */,
+				A18546031828633D00515162 /* Specs-Prefix.pch */,
+				A18546091828635400515162 /* SpecHelper.h */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A18545C91828626E00515162 /* Cedule */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A18545ED1828626E00515162 /* Build configuration list for PBXNativeTarget "Cedule" */;
+			buildPhases = (
+				A18545C61828626E00515162 /* Sources */,
+				A18545C71828626E00515162 /* Frameworks */,
+				A18545C81828626E00515162 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Cedule;
+			productName = Cedule;
+			productReference = A18545CA1828626E00515162 /* libCedule.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		A18545F61828633D00515162 /* Specs */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A18546081828633D00515162 /* Build configuration list for PBXNativeTarget "Specs" */;
+			buildPhases = (
+				B2F02C7B21B845AEB6F2C60A /* Check Pods Manifest.lock */,
+				A18545F31828633D00515162 /* Sources */,
+				A18545F41828633D00515162 /* Frameworks */,
+				A18545F51828633D00515162 /* Resources */,
+				A7C6959590A34C0992B0F562 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A18546051828633D00515162 /* PBXTargetDependency */,
+			);
+			name = Specs;
+			productName = Specs;
+			productReference = A18545F71828633D00515162 /* Specs.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A18545C21828626E00515162 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = Annema;
+				TargetAttributes = {
+					A18545F61828633D00515162 = {
+						TestTargetID = A18545C91828626E00515162;
+					};
+				};
+			};
+			buildConfigurationList = A18545C51828626E00515162 /* Build configuration list for PBXProject "Cedule" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = A18545C11828626E00515162;
+			productRefGroup = A18545CB1828626E00515162 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A18545C91828626E00515162 /* Cedule */,
+				A18545F61828633D00515162 /* Specs */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A18545F51828633D00515162 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A18546001828633D00515162 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A7C6959590A34C0992B0F562 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-Specs-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B2F02C7B21B845AEB6F2C60A /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A18545C61828626E00515162 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A185460C1828637E00515162 /* CEDScheduler.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A18545F31828633D00515162 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A185460F182863F400515162 /* CEDScheduler.m in Sources */,
+				A185460E1828638C00515162 /* CEDSchedulerSpec.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A18546051828633D00515162 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A18545C91828626E00515162 /* Cedule */;
+			targetProxy = A18546041828633D00515162 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A18545FE1828633D00515162 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A18545FF1828633D00515162 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A18545EB1828626E00515162 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		A18545EC1828626E00515162 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A18545EE1828626E00515162 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/Cedule.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Cedule/Cedule-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		A18545EF1828626E00515162 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/Cedule.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Cedule/Cedule-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		A18546061828633D00515162 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6AD6992A18B84B0BB68BA957 /* Pods-Specs.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Specs/Specs-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Specs/Specs-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		A18546071828633D00515162 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6AD6992A18B84B0BB68BA957 /* Pods-Specs.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Specs/Specs-Prefix.pch";
+				INFOPLIST_FILE = "Specs/Specs-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A18545C51828626E00515162 /* Build configuration list for PBXProject "Cedule" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A18545EB1828626E00515162 /* Debug */,
+				A18545EC1828626E00515162 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A18545ED1828626E00515162 /* Build configuration list for PBXNativeTarget "Cedule" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A18545EE1828626E00515162 /* Debug */,
+				A18545EF1828626E00515162 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A18546081828633D00515162 /* Build configuration list for PBXNativeTarget "Specs" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A18546061828633D00515162 /* Debug */,
+				A18546071828633D00515162 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A18545C21828626E00515162 /* Project object */;
+}
