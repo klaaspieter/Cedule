@@ -14,6 +14,6 @@
 
 @property (nonatomic, readonly, copy) NSArray *tasks;
 
-- (void)scheduleTask:(CEDSchedulerTask)task withTimeInterval:(NSTimeInterval)interval;
+- (void)scheduleTask:(CEDTaskBlock)block withTimeInterval:(NSTimeInterval)interval;
 
 @end

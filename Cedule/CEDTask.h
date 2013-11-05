@@ -8,14 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
-typedef void(^CEDSchedulerTask)(void);
+typedef void(^CEDTaskBlock)(void);
 
 @interface CEDTask : NSObject
 
-@property (nonatomic, readonly, copy) CEDSchedulerTask block;
+@property (nonatomic, readonly, copy) CEDTaskBlock block;
 @property (nonatomic, readonly, copy) NSDate *performAfter;
 
-+ (instancetype)taskWithBlock:(CEDSchedulerTask)block withTimeInterval:(NSTimeInterval)interval;
-- (id)initWithBlock:(CEDSchedulerTask)block withTimeInterval:(NSTimeInterval)interval;
++ (instancetype)taskWithBlock:(CEDTaskBlock)block withTimeInterval:(NSTimeInterval)interval;
+- (id)initWithBlock:(CEDTaskBlock)block withTimeInterval:(NSTimeInterval)interval;
 
 @end

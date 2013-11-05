@@ -10,12 +10,12 @@
 
 @implementation CEDTask
 
-+ (instancetype)taskWithBlock:(CEDSchedulerTask)block withTimeInterval:(NSTimeInterval)interval;
++ (instancetype)taskWithBlock:(CEDTaskBlock)block withTimeInterval:(NSTimeInterval)interval;
 {
     return [[self alloc] initWithBlock:block withTimeInterval:interval];
 }
 
-- (id)initWithBlock:(CEDSchedulerTask)block withTimeInterval:(NSTimeInterval)interval;
+- (id)initWithBlock:(CEDTaskBlock)block withTimeInterval:(NSTimeInterval)interval;
 {
     self = [super init];
     if (self) {

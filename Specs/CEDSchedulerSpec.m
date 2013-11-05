@@ -12,7 +12,7 @@ describe(@"Scheduler", ^{
     });
 
     it(@"can schedule a task", ^{
-        CEDSchedulerTask block = ^{};
+        CEDTaskBlock block = ^{};
         [_scheduler scheduleTask:block withTimeInterval:0.0];
         CEDTask *task = _scheduler.tasks[0];
         expect(task.block).to.equal(block);
