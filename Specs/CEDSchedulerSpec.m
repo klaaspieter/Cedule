@@ -23,6 +23,14 @@ describe(@"Scheduler", ^{
         CEDTask *task = _scheduler.tasks[0];
         expect(task.performAfter.timeIntervalSinceNow).to.beCloseToWithin(10.0, 1.0);
     });
+
+    it(@"performs the task after the interval", ^AsyncBlock{
+        NSDate *then = [NSDate date];
+        [_scheduler scheduleTask:^{
+            expect([[NSDate date] timeIntervalSinceDate:then]).to.beGreaterThanOrEqualTo(1.0);
+            done();
+        } withTimeInterval:1.0];
+    });
 });
 
 SpecEnd

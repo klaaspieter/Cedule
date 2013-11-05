@@ -18,7 +18,16 @@
 
 - (void)scheduleTask:(CEDTaskBlock)block withTimeInterval:(NSTimeInterval)interval;
 {
-    [self.mutableTasks addObject:[CEDTask taskWithBlock:block withTimeInterval:interval]];
+    CEDTask *task = [CEDTask taskWithBlock:block withTimeInterval:interval];
+    [self.mutableTasks addObject:task];
+    [NSTimer scheduledTimerWithTimeInterval:interval target:self selector:@selector(performTasks:) userInfo:nil repeats:NO];
+}
+
+- (void)performTasks:(NSTimer *)timer;
+{
+    [self.tasks enumerateObjectsUsingBlock:^(CEDTask *task, NSUInteger idx, BOOL *stop) {
+        task.block();
+    }];
 }
 
 - (NSMutableArray *)mutableTasks;
