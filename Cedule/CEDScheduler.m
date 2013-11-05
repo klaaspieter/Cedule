@@ -18,7 +18,7 @@
 
 - (void)scheduleTask:(CEDSchedulerTask)task withTimeInterval:(NSTimeInterval)interval;
 {
-    [self.mutableTasks addObject:[CEDTask taskWithBlock:nil withTimeInterval:interval]];
+    [self.mutableTasks addObject:[CEDTask taskWithBlock:task withTimeInterval:interval]];
 }
 
 - (NSMutableArray *)mutableTasks;

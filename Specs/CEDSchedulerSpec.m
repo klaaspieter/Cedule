@@ -12,8 +12,10 @@ describe(@"Scheduler", ^{
     });
 
     it(@"can schedule a task", ^{
-        [_scheduler scheduleTask:^{} withTimeInterval:0.0];
-        expect(_scheduler.tasks).to.haveCountOf(1);
+        CEDSchedulerTask block = ^{};
+        [_scheduler scheduleTask:block withTimeInterval:0.0];
+        CEDTask *task = _scheduler.tasks[0];
+        expect(task.block).to.equal(block);
     });
 
     it(@"schedules the task after the correct interval", ^{
