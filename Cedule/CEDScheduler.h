@@ -8,6 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+typedef void(^CEDSchedulerTask)(void);
+
 @interface CEDScheduler : NSObject
+
+@property (nonatomic, readonly, copy) NSArray *tasks;
+
+- (void)scheduleTask:(CEDSchedulerTask)task withTimeInterval:(NSTimeInterval)interval;
 
 @end
