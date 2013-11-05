@@ -13,6 +13,8 @@ typedef void(^CEDTaskBlock)(void);
 @interface CEDTask : NSObject
 
 @property (nonatomic, readonly, copy) CEDTaskBlock block;
+@property (nonatomic, readonly, assign) NSTimeInterval interval;
+
 @property (nonatomic, readonly, copy) NSDate *performAfter;
 
 + (instancetype)taskWithBlock:(CEDTaskBlock)block withTimeInterval:(NSTimeInterval)interval;

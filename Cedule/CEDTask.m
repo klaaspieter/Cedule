@@ -20,10 +20,16 @@
     self = [super init];
     if (self) {
         _block = block;
+        _interval = interval;
         _performAfter = [NSDate dateWithTimeIntervalSinceNow:interval];
     }
 
     return self;
+}
+
+- (NSString *)description;
+{
+    return [NSString stringWithFormat:@"<%@:%p> { interval: %f, timeLeft: %f }", NSStringFromClass(self.class), self, self.interval, self.performAfter.timeIntervalSinceNow];
 }
 
 @end

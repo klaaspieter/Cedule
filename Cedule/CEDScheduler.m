@@ -25,9 +25,17 @@
 
 - (void)performTasks:(NSTimer *)timer;
 {
+    NSMutableArray *tasksToSchedule = [NSMutableArray array];
+    NSMutableIndexSet *indexesToRemove = [NSMutableIndexSet indexSet];
+
     [self.tasks enumerateObjectsUsingBlock:^(CEDTask *task, NSUInteger idx, BOOL *stop) {
         task.block();
+        [indexesToRemove addIndex:idx];
+        [tasksToSchedule addObject:[CEDTask taskWithBlock:task.block withTimeInterval:task.interval]];
     }];
+
+    [self.mutableTasks removeObjectsAtIndexes:indexesToRemove];
+    [self.mutableTasks addObjectsFromArray:tasksToSchedule];
 }
 
 - (NSMutableArray *)mutableTasks;

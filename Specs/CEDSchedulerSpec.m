@@ -27,9 +27,20 @@ describe(@"Scheduler", ^{
     it(@"performs the task after the interval", ^AsyncBlock{
         NSDate *then = [NSDate date];
         [_scheduler scheduleTask:^{
-            expect([[NSDate date] timeIntervalSinceDate:then]).to.beGreaterThanOrEqualTo(1.0);
+            expect([[NSDate date] timeIntervalSinceDate:then]).to.beGreaterThanOrEqualTo(0.25);
             done();
-        } withTimeInterval:1.0];
+        } withTimeInterval:0.25];
+    });
+
+    it(@"reschedules the task after it's performed", ^AsyncBlock{
+        [_scheduler scheduleTask:^{
+            double delayInSeconds = 0.0;
+            dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+            dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                expect([_scheduler.tasks[0] performAfter].timeIntervalSinceNow).to.beCloseToWithin(0.1, 0.001);
+                done();
+            });
+        } withTimeInterval:0.1];
     });
 });
 
