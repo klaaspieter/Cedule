@@ -15,6 +15,8 @@
 		A185460C1828637E00515162 /* CEDScheduler.m in Sources */ = {isa = PBXBuildFile; fileRef = A185460B1828637E00515162 /* CEDScheduler.m */; };
 		A185460E1828638C00515162 /* CEDSchedulerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = A185460D1828638C00515162 /* CEDSchedulerSpec.m */; };
 		A185460F182863F400515162 /* CEDScheduler.m in Sources */ = {isa = PBXBuildFile; fileRef = A185460B1828637E00515162 /* CEDScheduler.m */; };
+		A1854612182914F600515162 /* CEDTask.m in Sources */ = {isa = PBXBuildFile; fileRef = A1854611182914F600515162 /* CEDTask.m */; };
+		A18546131829163900515162 /* CEDTask.m in Sources */ = {isa = PBXBuildFile; fileRef = A1854611182914F600515162 /* CEDTask.m */; };
 		F30F20B424CC4971B697FD45 /* libPods-Specs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5493438F151D4DA18577ABC7 /* libPods-Specs.a */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +58,8 @@
 		A185460A1828637E00515162 /* CEDScheduler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CEDScheduler.h; sourceTree = "<group>"; };
 		A185460B1828637E00515162 /* CEDScheduler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CEDScheduler.m; sourceTree = "<group>"; };
 		A185460D1828638C00515162 /* CEDSchedulerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CEDSchedulerSpec.m; sourceTree = "<group>"; };
+		A1854610182914F600515162 /* CEDTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CEDTask.h; sourceTree = "<group>"; };
+		A1854611182914F600515162 /* CEDTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CEDTask.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +122,8 @@
 				A18545D01828626E00515162 /* Supporting Files */,
 				A185460A1828637E00515162 /* CEDScheduler.h */,
 				A185460B1828637E00515162 /* CEDScheduler.m */,
+				A1854610182914F600515162 /* CEDTask.h */,
+				A1854611182914F600515162 /* CEDTask.m */,
 			);
 			path = Cedule;
 			sourceTree = "<group>";
@@ -272,6 +278,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A185460C1828637E00515162 /* CEDScheduler.m in Sources */,
+				A1854612182914F600515162 /* CEDTask.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +288,7 @@
 			files = (
 				A185460F182863F400515162 /* CEDScheduler.m in Sources */,
 				A185460E1828638C00515162 /* CEDSchedulerSpec.m in Sources */,
+				A18546131829163900515162 /* CEDTask.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

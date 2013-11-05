@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-typedef void(^CEDSchedulerTask)(void);
+#import "CEDTask.h"
 
 @interface CEDScheduler : NSObject
 

@@ -8,6 +8,8 @@
 
 #import "CEDScheduler.h"
 
+#import "CEDtask.h"
+
 @interface CEDScheduler ()
 @property (nonatomic, readwrite, strong) NSMutableArray *mutableTasks;
 @end
@@ -16,7 +18,7 @@
 
 - (void)scheduleTask:(CEDSchedulerTask)task withTimeInterval:(NSTimeInterval)interval;
 {
-    [self.mutableTasks addObject:task];
+    [self.mutableTasks addObject:[CEDTask taskWithBlock:nil withTimeInterval:interval]];
 }
 
 - (NSMutableArray *)mutableTasks;
