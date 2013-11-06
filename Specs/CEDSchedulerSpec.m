@@ -15,6 +15,10 @@ describe(@"Scheduler", ^{
         _scheduler = [[CEDScheduler alloc] init];
     });
 
+    after(^{
+        [_scheduler removeAllTasks];
+    });
+
     it(@"can schedule a task", ^{
         CEDTaskBlock block = ^{};
         [_scheduler scheduleTask:block withTimeInterval:0.0];
@@ -43,13 +47,13 @@ describe(@"Scheduler", ^{
             numberOfCalls++;
 
             if (numberOfCalls == 2) {
-                expect([[NSDate date] timeIntervalSinceDate:then]).to.beCloseToWithin(0.2, 0.001);
+                expect([[NSDate date] timeIntervalSinceDate:then]).to.beCloseToWithin(0.2, 0.01);
                 done();
             }
         } withTimeInterval:0.1];
     });
 
-    fit(@"handles tasks with different intervals", ^AsyncBlock{
+    it(@"handles tasks with different intervals", ^AsyncBlock{
         NSDate *then = [NSDate date];
 
         __block NSUInteger numberOfCallsToFirst = 0;

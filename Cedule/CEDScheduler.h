@@ -16,5 +16,6 @@
 
 - (void)scheduleTask:(CEDTaskBlock)block withTimeInterval:(NSTimeInterval)interval;
 - (void)removeTask:(CEDTaskBlock)block;
+- (void)removeAllTasks;
 
 @end

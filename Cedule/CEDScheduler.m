@@ -41,6 +41,12 @@
     [self scheduleNextPerform];
 }
 
+- (void)removeAllTasks;
+{
+    self.mutableTasks = [NSMutableArray array];
+    [self scheduleNextPerform];
+}
+
 - (void)scheduleNextPerform;
 {
     CEDTask *task = self.mutableTasks.firstObject;
