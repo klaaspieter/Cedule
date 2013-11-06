@@ -45,17 +45,36 @@ describe(@"Scheduler", ^{
         } withTimeInterval:0.1];
     });
 
-    it(@"handles tasks with different intervals", ^AsyncBlock{
+    fit(@"handles tasks with different intervals", ^AsyncBlock{
         NSDate *then = [NSDate date];
 
+        __block NSUInteger numberOfCallsToFirst = 0;
         [_scheduler scheduleTask:^{
-            expect([[NSDate date] timeIntervalSinceDate:then]).to.beCloseToWithin(0.1, 0.001);
+            numberOfCallsToFirst++;
+            expect([[NSDate date] timeIntervalSinceDate:then]).to.beCloseToWithin(numberOfCallsToFirst * 0.1, 0.01);
         } withTimeInterval:0.1];
 
+        __block NSUInteger numberOfCallsToSecond = 0;
         [_scheduler scheduleTask:^{
-            expect([[NSDate date] timeIntervalSinceDate:then]).to.beCloseToWithin(0.2, 0.001);
+            numberOfCallsToSecond++;
+            expect([[NSDate date] timeIntervalSinceDate:then]).to.beCloseToWithin(numberOfCallsToSecond * 0.15, 0.01);
             done();
-        } withTimeInterval:0.2];
+        } withTimeInterval:0.15];
+    });
+
+    it(@"coalesces tasks that end up at the same interval", ^AsyncBlock{
+        NSDate *then = [NSDate date];
+
+        __block NSUInteger numberOfCalls = 0;
+        [_scheduler scheduleTask:^{
+            numberOfCalls++;
+            expect([[NSDate date] timeIntervalSinceDate:then]).to.beCloseToWithin(numberOfCalls * 1.0, 0.1);
+        } withTimeInterval:1.0];
+
+        [_scheduler scheduleTask:^{
+            expect([[NSDate date] timeIntervalSinceDate:then]).to.beCloseToWithin(2.0, 0.1);
+            done();
+        } withTimeInterval:2.0];
     });
 });
 

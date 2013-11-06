@@ -12,6 +12,7 @@
 
 @interface CEDScheduler ()
 @property (nonatomic, readwrite, strong) NSMutableArray *mutableTasks;
+@property (nonatomic, readwrite, strong) NSTimer *timer;
 @end
 
 @implementation CEDScheduler
@@ -19,10 +20,14 @@
 - (void)scheduleTask:(CEDTaskBlock)block withTimeInterval:(NSTimeInterval)interval;
 {
     CEDTask *task = [CEDTask taskWithBlock:block withTimeInterval:interval];
+    [self scheduleTasks:@[task]];
+}
 
-    [self.mutableTasks addObject:task];
+- (void)scheduleTasks:(NSArray *)tasks;
+{
+    [self.mutableTasks addObjectsFromArray:tasks];
     [self.mutableTasks sortUsingComparator:^NSComparisonResult(CEDTask *obj1, CEDTask *obj2) {
-        return [obj2.performAfter compare:obj1.performAfter];
+        return [obj1.performAfter compare:obj2.performAfter];
     }];
     [self scheduleNextPerform];
 }
@@ -30,31 +35,28 @@
 - (void)scheduleNextPerform;
 {
     CEDTask *task = self.mutableTasks.firstObject;
-    [NSTimer scheduledTimerWithTimeInterval:task.interval target:self selector:@selector(performTasks:) userInfo:nil repeats:NO];
-}
 
-- (void)scheduleTasks:(NSArray *)tasks;
-{
-    [self.mutableTasks addObjectsFromArray:tasks];
-    CEDTask *firstTask = self.mutableTasks.firstObject;
-    [NSTimer scheduledTimerWithTimeInterval:firstTask.interval target:self selector:@selector(performTasks:) userInfo:nil repeats:NO];
+    if (!self.timer || [self.timer.fireDate compare:task.performAfter] == NSOrderedAscending) {
+        [self.timer invalidate];
+        self.timer = [NSTimer scheduledTimerWithTimeInterval:task.performAfter.timeIntervalSinceNow target:self selector:@selector(performTasks:) userInfo:nil repeats:NO];
+    }
 }
 
 - (void)performTasks:(NSTimer *)timer;
 {
-    NSMutableArray *tasksToSchedule = [NSMutableArray array];
+    NSMutableArray *tasksToReschedule = [NSMutableArray array];
     NSMutableIndexSet *indexesToRemove = [NSMutableIndexSet indexSet];
 
     [self.tasks enumerateObjectsUsingBlock:^(CEDTask *task, NSUInteger idx, BOOL *stop) {
         if ([self shouldPerform:task]) {
             task.block();
             [indexesToRemove addIndex:idx];
-            [tasksToSchedule addObject:[CEDTask taskWithBlock:task.block withTimeInterval:task.interval]];
+            [tasksToReschedule addObject:[CEDTask taskWithBlock:task.block withTimeInterval:task.interval]];
         }
     }];
 
     [self.mutableTasks removeObjectsAtIndexes:indexesToRemove];
-    [self scheduleTasks:tasksToSchedule];
+    [self scheduleTasks:tasksToReschedule];
 }
 
 - (BOOL)shouldPerform:(CEDTask *)task;
