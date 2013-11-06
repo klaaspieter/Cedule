@@ -38,13 +38,16 @@
         return task.block == block;
     }];
     [self.mutableTasks removeObjectsAtIndexes:indexesToRemove];
+    [self scheduleNextPerform];
 }
 
 - (void)scheduleNextPerform;
 {
     CEDTask *task = self.mutableTasks.firstObject;
 
-    if (!self.timer || [self.timer.fireDate compare:task.performAfter] == NSOrderedAscending) {
+    if (!task) {
+        [self.timer invalidate];
+    } else if (!self.timer || [self.timer.fireDate compare:task.performAfter] == NSOrderedAscending) {
         [self.timer invalidate];
         self.timer = [NSTimer scheduledTimerWithTimeInterval:task.performAfter.timeIntervalSinceNow target:self selector:@selector(performTasks:) userInfo:nil repeats:NO];
     }

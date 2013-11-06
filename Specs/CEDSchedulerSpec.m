@@ -2,6 +2,10 @@
 
 #import "CEDScheduler.h"
 
+@interface CEDScheduler (Specs)
+@property (nonatomic, readonly, strong) NSTimer *timer;
+@end
+
 SpecBegin(CEDScheduler)
 
 __block CEDScheduler *_scheduler;
@@ -77,11 +81,18 @@ describe(@"Scheduler", ^{
         } withTimeInterval:2.0];
     });
 
-    it(@"does not perform tasks that have been removed", ^{
+    it(@"can remove tasks", ^{
         CEDTaskBlock task = ^{};
         [_scheduler scheduleTask:task withTimeInterval:1.0];
         [_scheduler removeTask:task];
         expect(_scheduler.tasks).to.haveCountOf(0);
+    });
+
+    it(@"doesn't schedule anoter time if the last task is removed", ^{
+        CEDTaskBlock task = ^{};
+        [_scheduler scheduleTask:task withTimeInterval:1.0];
+        [_scheduler removeTask:task];
+        expect(_scheduler.timer.isValid).to.beFalsy();
     });
 });
 
