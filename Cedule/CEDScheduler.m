@@ -19,8 +19,18 @@
 - (void)scheduleTask:(CEDTaskBlock)block withTimeInterval:(NSTimeInterval)interval;
 {
     CEDTask *task = [CEDTask taskWithBlock:block withTimeInterval:interval];
+
     [self.mutableTasks addObject:task];
-    [NSTimer scheduledTimerWithTimeInterval:interval target:self selector:@selector(performTasks:) userInfo:nil repeats:NO];
+    [self.mutableTasks sortUsingComparator:^NSComparisonResult(CEDTask *obj1, CEDTask *obj2) {
+        return [obj2.performAfter compare:obj1.performAfter];
+    }];
+    [self scheduleNextPerform];
+}
+
+- (void)scheduleNextPerform;
+{
+    CEDTask *task = self.mutableTasks.firstObject;
+    [NSTimer scheduledTimerWithTimeInterval:task.interval target:self selector:@selector(performTasks:) userInfo:nil repeats:NO];
 }
 
 - (void)scheduleTasks:(NSArray *)tasks;
@@ -36,13 +46,20 @@
     NSMutableIndexSet *indexesToRemove = [NSMutableIndexSet indexSet];
 
     [self.tasks enumerateObjectsUsingBlock:^(CEDTask *task, NSUInteger idx, BOOL *stop) {
-        task.block();
-        [indexesToRemove addIndex:idx];
-        [tasksToSchedule addObject:[CEDTask taskWithBlock:task.block withTimeInterval:task.interval]];
+        if ([self shouldPerform:task]) {
+            task.block();
+            [indexesToRemove addIndex:idx];
+            [tasksToSchedule addObject:[CEDTask taskWithBlock:task.block withTimeInterval:task.interval]];
+        }
     }];
 
     [self.mutableTasks removeObjectsAtIndexes:indexesToRemove];
     [self scheduleTasks:tasksToSchedule];
+}
+
+- (BOOL)shouldPerform:(CEDTask *)task;
+{
+    return [task.performAfter compare:[NSDate date]] == NSOrderedAscending;
 }
 
 - (NSMutableArray *)mutableTasks;

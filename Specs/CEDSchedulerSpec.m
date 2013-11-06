@@ -44,6 +44,19 @@ describe(@"Scheduler", ^{
             }
         } withTimeInterval:0.1];
     });
+
+    it(@"handles tasks with different intervals", ^AsyncBlock{
+        NSDate *then = [NSDate date];
+
+        [_scheduler scheduleTask:^{
+            expect([[NSDate date] timeIntervalSinceDate:then]).to.beCloseToWithin(0.1, 0.001);
+        } withTimeInterval:0.1];
+
+        [_scheduler scheduleTask:^{
+            expect([[NSDate date] timeIntervalSinceDate:then]).to.beCloseToWithin(0.2, 0.001);
+            done();
+        } withTimeInterval:0.2];
+    });
 });
 
 SpecEnd
