@@ -76,6 +76,13 @@ describe(@"Scheduler", ^{
             done();
         } withTimeInterval:2.0];
     });
+
+    it(@"does not perform tasks that have been removed", ^{
+        CEDTaskBlock task = ^{};
+        [_scheduler scheduleTask:task withTimeInterval:1.0];
+        [_scheduler removeTask:task];
+        expect(_scheduler.tasks).to.haveCountOf(0);
+    });
 });
 
 SpecEnd

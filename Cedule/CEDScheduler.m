@@ -32,6 +32,14 @@
     [self scheduleNextPerform];
 }
 
+- (void)removeTask:(CEDTaskBlock)block;
+{
+    NSIndexSet *indexesToRemove = [self.mutableTasks indexesOfObjectsPassingTest:^BOOL(CEDTask *task, NSUInteger idx, BOOL *stop) {
+        return task.block == block;
+    }];
+    [self.mutableTasks removeObjectsAtIndexes:indexesToRemove];
+}
+
 - (void)scheduleNextPerform;
 {
     CEDTask *task = self.mutableTasks.firstObject;
