@@ -23,6 +23,13 @@
     [NSTimer scheduledTimerWithTimeInterval:interval target:self selector:@selector(performTasks:) userInfo:nil repeats:NO];
 }
 
+- (void)scheduleTasks:(NSArray *)tasks;
+{
+    [self.mutableTasks addObjectsFromArray:tasks];
+    CEDTask *firstTask = self.mutableTasks.firstObject;
+    [NSTimer scheduledTimerWithTimeInterval:firstTask.interval target:self selector:@selector(performTasks:) userInfo:nil repeats:NO];
+}
+
 - (void)performTasks:(NSTimer *)timer;
 {
     NSMutableArray *tasksToSchedule = [NSMutableArray array];
@@ -35,7 +42,7 @@
     }];
 
     [self.mutableTasks removeObjectsAtIndexes:indexesToRemove];
-    [self.mutableTasks addObjectsFromArray:tasksToSchedule];
+    [self scheduleTasks:tasksToSchedule];
 }
 
 - (NSMutableArray *)mutableTasks;
